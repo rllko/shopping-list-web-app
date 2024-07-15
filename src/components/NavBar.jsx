@@ -3,7 +3,7 @@ function NavBar(){
     <main className="sticky top-0 bg-white">
         <header className=" top-0 flex items-center justify-between">
             <div>
-                <img className="p-2 hover:cursor-pointer" src="./src/assets/img/logo nobg small.png" width={150} alt="" />
+                <img className="p-2 hover:cursor-pointer" src="https://github.com/rllko/RecieptsWebApp/blob/master/src/assets/img/logo%20nobg%20small.png?raw=true" width={150} alt="" />
             </div>
             <nav> 
                 <div className="flex align-middle gap-4 items-center justify-center">
