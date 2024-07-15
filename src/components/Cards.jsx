@@ -10,13 +10,13 @@ function Cards(){
             </p>
         </div>
         <div className="md:!block hidden">
-            <img src="./src/assets/img/app-compras.svg" className="pr-10" width={500} alt="" />
+            <img src="https://i.imgur.com/Iptrz33.png" className="pr-10" width={500} alt="" />
         </div>
     </section>
 
     <section className="bg-white grid lg:grid-cols-2 sm:grid-cols-1 mx-[15vw] h-full py-6 justify-between">
         <div className="col-span-1">
-            <img src="./src/assets/img/lista-mulher.svg" className="pr-10 mx-auto scale-x-[-1]" width={500} alt="" />
+            <img src="https://i.imgur.com/JNLu2bn.gif" className="pr-10 mx-auto scale-x-[-1]" width={500} alt="" />
         </div>
         <div className="m-auto">
             <h2 className="text-black m-auto lg:text-5xl sm:text-4xl font-bold flex">Crie listas de compras <img className="ml-2 mt-[2%]" src="./src/assets/img/list-icon.svg" width={30} alt="" /></h2> 
@@ -39,7 +39,7 @@ function Cards(){
                 </p>
             </div>
             <div>
-                <img src="./src/assets/img/receita.svg" className="mx-auto" width={500} alt="" />
+                <img src="https://i.imgur.com/G6YxvaY.gif" className="mx-auto" width={500} alt="" />
             </div>
         </div>
     </section>
