@@ -9,5 +9,5 @@ export default {
     },
   },
 
-  plugins: [require("./src/plugins/openVariant")],
+  plugins: [],
 }
