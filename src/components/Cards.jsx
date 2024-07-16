@@ -3,14 +3,14 @@ function Cards(){
         <>
 
     <section>
-        <div className="bg-gradient-to-br px-[30%] sm:px-[25%] lg:px-[30%] xl:px-[20%] from-orange-300 justify-items-center to-orange-400 h-full flex flex-wrap p-6 justify-between">
+        <div className="bg-gradient-to-br flex from-orange-300 flex-wrap space-x-[10vw] items ml-auto justify-center to-orange-400 h-full p-6 ">
             <div className="">
-                <h2 className="text-white text-[2em] w-96 pt-20 font-bold">Organize a sua forma de comprar!</h2>
-                <p className="text-white text-lg w-72 pt-4">Crie listas para organizar as suas compras
+                <h2 className="text-amber-50 md:text-[3vw] lg:text-[4.5vw] xl:text-[4vh] text-[5vw] lg:pt-20 font-bold">Organize a sua forma de comprar!</h2>
+                <p className="text-white lg:text-[1.7vw] lg xl:text-[2.5vh] md:pt-2 text-center">Crie listas para organizar as suas compras
                 de forma a poupar tempo e dinheiro</p>
             </div>
             <div>
-                <img src="./img/app-compras.svg" className="pr-10" width={"400vw"} alt="" />
+                <img src="./img/app-compras.svg" className="h-[50vw] lg:h-[40vw] xl:h-[50vh] lg:pr-10 pr-6" alt="" />
             </div>
         </div>
     </section>
@@ -32,7 +32,7 @@ function Cards(){
     <section>
         <div className="bg-white grid pl-[9vw] lg:grid-cols-2 sm:grid-cols-1 h-full mt-12">
             <div className="m-auto">
-                <h2 className="text-black md:text-5xl sm:text-4xl font-bold flex">Receitas <img className="ml-2 mt-[2%]" src="./img/recipe-icon.svg" width={40} alt="" /></h2> 
+                <h2 className="text-black md:text-5xl sm:text-4xl font-bold flex">Receitas <img className="ml-2 mt-[2]" src="./img/recipe-icon.svg" width={40} alt="" /></h2> 
                 <p className="text-md text-zinc-600 mt-3 lg:w-[25vw] pt-2">
                     Encontre a receita que está a procurar.
                     Temos muitas receitas de culinária para todos os níveis, com fotos e explicadas passo a passo.
