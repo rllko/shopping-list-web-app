@@ -5,9 +5,9 @@ function Footer(){
         </div>
         <p className="text-[1em] text-center">© Copyright 2022 - MixList Corporation</p>
         <button className=
-        "flex text-[0.8em] my-2 bg-transparent justify-center sm:hidden \
-         items-center px-5 rounded-lg border-2 mr-3 relative \
-         w-[100] align-text-top h-[3vw] border-black \
+        "flex text-[1em] my-2 bg-transparent sm:hidden md:hidden lg:block \
+         items-start justify-start px-5 rounded-lg border-2 mr-3 \
+         w-[100] align-text-top h-[5vh] border-black \
          hover:bg-gradient-to-tr cursor-pointer hover:from-orange-100 \
          shadow-solid hover:to-orange-300 text-md hover:font-bold">
         Registra-te gratuitamente
