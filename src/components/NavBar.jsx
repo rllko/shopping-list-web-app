@@ -21,7 +21,7 @@ function NavBar(){
                     Login
                 </button>
                 <div className="xl:hidden flex ml-auto pr-4 cursor-pointer relative">
-                    <div id="mobile-menu-button" onClick={()=> setIsSidebarEnabled(!isSidebarEnabled)} className={`group ${isSidebarEnabled ? "open" : ""}`}>
+                    <div id="mobile-menu-button" onClick={()=>{ setIsSidebarEnabled(!isSidebarEnabled)}} className={`group ${isSidebarEnabled ? "open" : ""}`}>
                         <div className={`bg-black rounded-full relative t w-8 transition-all duration-200 h-1 ${isSidebarEnabled ? "rotate-45 top-2" : ""}`}></div>
                         <div className={`bg-black rounded-full w-8 h-1 transition-all ease-in-out duration-200 my-1 ${isSidebarEnabled ? "-rotate-45 " : ""}`}></div>
                         <div className={`bg-black rounded-full w-8 h-1 ${isSidebarEnabled ? "hidden" :""}`}></div>
