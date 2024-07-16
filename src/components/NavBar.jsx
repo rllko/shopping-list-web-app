@@ -3,7 +3,11 @@ function NavBar(){
     <main className="sticky top-0 bg-white">
         <header className=" top-0 flex items-center justify-between mx-10">
             <div>
+<<<<<<< HEAD
                 <img className="p-2 shover:cursor-pointer" src="https://i.imgur.com/Loo0bwW.png" width={150} alt="" />
+=======
+                <img className="p-2 hover:cursor-pointer" src="./src/assets/img/logo nobg small.png" width={150} alt="" />
+>>>>>>> parent of 3c0c4aa (fixes)
             </div>
             <nav className="xl:!flex hidden "> 
                 <div className="flex align-middle gap-4 items-center justify-center">
