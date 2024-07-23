@@ -10,22 +10,15 @@ function NavBar(){
             </div>
             <nav className="md:!flex hidden "> 
                 <div className=" relative flex gap-0 mx-auto items-center justify-center">
-                    <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50  h-full hover:cursor-pointer">Home</div>
+                    <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 h-full hover:cursor-pointer">Login</div>
                     <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">My Lists</div>
                     <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">Recipes</div>
                     <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">About</div>
                 </div>
+       
             </nav>
-            <div className=" flex md:hidden flex-row items-center">
-                <button className="hidden xl:flex justify-center items-center
-                 rounded-lg border-2 mr-2 relative w-[50%] sm:w-[50%] md:w-full
-                  align-text-top h-full border-black
-                   outline-none text-black bg-white 
-                   hover:bg-gradient-to-tr cursor-pointer 
-                   hover:from-orange-100 shadow-solid hover:to-orange-300 
-                   text-md transition-all duration-200 hover:font-bold">
-                    Login
-                </button>
+            <div className="flex md:hidden flex-row items-center">
+
                 <div className="md:hidden flex mx-auto lg:pr-4 -right-3 cursor-pointer relative mt-1 mr-[.5em]">
                     <div id="mobile-menu-button"  onClick={()=>{ setIsSidebarEnabled(!isSidebarEnabled)}} className={`group ${isSidebarEnabled ? "open" : ""}`}>
                         <div className={`bg-black rounded-full relative t w-8 transition-all duration-200 h-1 ${isSidebarEnabled ? "rotate-45 top-2" : ""}`}></div>
