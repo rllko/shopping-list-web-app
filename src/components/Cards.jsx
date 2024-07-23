@@ -26,7 +26,7 @@ function Cards(){
                         Create a digital list to organize your shopping and save time and paper.
                     </p>
                     <button className= 
-                    "text-sm mt-4 md:text-xs xl:text-base my-2 bg-transparent lg:block \
+                    "text-sm mt-4 md:text-xs xl:text-base mb-2 bg-transparent lg:block \
                     px-5 rounded-lg border-2 align-text-top border-black \
                     hover:bg-gradient-to-tr cursor-pointer text-black hover:from-orange-100 \
                     shadow-solid hover:to-orange-300 text-md hover:font-bold">
@@ -35,7 +35,7 @@ function Cards(){
                 </div>
             </div>
         </section>
-    <section className="md:py-2 md:m-0">
+    <section className="max-h-[25vh] mt-10 md:m-0">
         <div className="flex justify-center h-full mx-auto items-center flex-wrap
                         md:flex-nowrap 
                         xl:justify-center xl:max-w-6xl w-[90%] sm:w-full md:w-[65%] lg:w-[62%] 2xl:w-[60%]">
@@ -44,7 +44,7 @@ function Cards(){
                     Never run out of ideas with our large list of recipes that range from a simple cake to the best pasta.
                 </p>
             <div className="m-0">
-                <img src="./img/receita.svg" className=" w-56 xl:w-62 2xl:w- md:w-full pr-6 " alt="" />
+                <img src="./img/receita.svg" className=" w-56 xl:w-62 2xl:w- md:w-full " alt="" />
             </div>
             </div>
     </section>
