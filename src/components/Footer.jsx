@@ -1,10 +1,11 @@
 function Footer(){
-    return(<footer className="bg-orange-200 flex justify-between px-16 items-center">
+    return(<footer className="bg-orange-200 ">
+       <div className=" max-w-7xl flex justify-between items-center md:mx-auto mx-[.5em]">
         <div>
             <img className="p-2 l- hover:cursor-pointer" src="https://i.imgur.com/Loo0bwW.png" width={100} alt="" />
         </div>
-        <p className="text-[1em] text-center">© Copyright 2022 - MixList Corporation</p>
-       
+        <p className="text-[0.6em] text-zinc-600 md:text-[.8em] text-center">© Copyright 2022 - MixList Corporation</p>
+        </div>
     </footer>)
 }
 

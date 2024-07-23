@@ -7,6 +7,12 @@
         font-family: "Noto Sans", sans-serif;
     }
 
+    @media (max-width: 375px){
+        h2 {
+            font-size:0.8em;
+        }
+    }
+
     @media (max-width: 600px){
         h2 {
             font-size:1em
@@ -21,13 +27,13 @@
 
     @screen md{
         h2{
-            font-size:2em 
+            font-size:2.7em 
         }   
     }
 
     @screen xl{
         h2{
-            font-size:2.3em 
+            font-size:3em 
         }   
     }
 

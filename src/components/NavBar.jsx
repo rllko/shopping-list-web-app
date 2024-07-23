@@ -4,7 +4,7 @@ function NavBar(){
     const [isSidebarEnabled,setIsSidebarEnabled] = useState(false);
     return(
     <main className="sticky top-0 z-50 bg-white ">
-        <header className=" flex items-center justify-between w-full max-w-[95%] sm:max-w-2xl md:max-w-5xl xl:max-w-6xl 2xl:max-w-full md:mx-auto">
+        <header className=" flex items-center justify-between w-full max-w-[95%] sm:max-w-2xl md:max-w-5xl xl:max-w-7xl 2xl:max-w-[90%] md:mx-auto">
             <div>
                 <img className="p-2 ml-[.5em] hover:cursor-pointer" src="./img/logo nobg small.png" width={150} alt="" />
             </div>
@@ -16,7 +16,7 @@ function NavBar(){
                     <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">About</div>
                 </div>
             </nav>
-            <div className="  md:flex flex-row items-center">
+            <div className=" flex md:hidden flex-row items-center">
                 <button className="hidden xl:flex justify-center items-center
                  rounded-lg border-2 mr-2 relative w-[50%] sm:w-[50%] md:w-full
                   align-text-top h-full border-black
