@@ -738,6 +738,10 @@ html{
   height: 100%;
 }
 
+.h-screen{
+  height: 100vh;
+}
+
 .min-h-\[45vh\]{
   min-height: 45vh;
 }
@@ -788,6 +792,18 @@ html{
 
 .w-\[100\%\]{
   width: 100%;
+}
+
+.w-\[50vw\]{
+  width: 50vw;
+}
+
+.w-\[40vw\]{
+  width: 40vw;
+}
+
+.w-\[30vw\]{
+  width: 30vw;
 }
 
 .max-w-7xl{
@@ -956,6 +972,10 @@ html{
   background-color: rgb(24 24 27 / var(--tw-bg-opacity));
 }
 
+.bg-orange-100\/50{
+  background-color: rgb(255 237 213 / 0.5);
+}
+
 .bg-gradient-to-br{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -1055,6 +1075,11 @@ html{
   line-height: 1rem;
 }
 
+.text-3xl{
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
 .font-bold{
   font-weight: 700;
 }
@@ -1096,6 +1121,11 @@ html{
 .text-zinc-800{
   --tw-text-opacity: 1;
   color: rgb(39 39 42 / var(--tw-text-opacity));
+}
+
+.\!text-black{
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 
 .shadow-lg{
@@ -1150,6 +1180,10 @@ html{
   background-color: rgb(255 237 213 / 0.5);
 }
 
+.hover\:\!bg-orange-100\/50:hover{
+  background-color: rgb(255 237 213 / 0.5) !important;
+}
+
 .hover\:bg-gradient-to-tr:hover{
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
 }
@@ -1170,6 +1204,15 @@ html{
 
 .hover\:font-semibold:hover{
   font-weight: 600;
+}
+
+.hover\:\!font-semibold:hover{
+  font-weight: 600 !important;
+}
+
+.hover\:\!text-black:hover{
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 
 .hover\:transition-all:hover{

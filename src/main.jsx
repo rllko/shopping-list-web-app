@@ -10,12 +10,24 @@ import Index from './Pages/Index/Index.jsx';
 import About from './Pages/About/About.jsx';
 
 const router = createBrowserRouter([{
-  path: '/reciepts-web-app/',
+  path: '/shopping-list-web-app/',
   element: <Index/>,
   errorElement: <NotFoundPage/>
 },{
-  path:'/reciepts-web-app/about',
+  path:'/shopping-list-web-app/about',
   element: <About/>,
+},
+{
+  path:'/shopping-list-web-app/login',
+  element: <NotFoundPage/>,
+},
+{
+  path:'/shopping-list-web-app/lists',
+  element: <NotFoundPage/>,
+},
+{
+  path:'/shopping-list-web-app/recipes',
+  element: <NotFoundPage/>,
 }]) 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

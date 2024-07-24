@@ -9,17 +9,40 @@ function NavBar(){
             <Link className="" to={'/reciepts-web-app/'}>
                 <img className="p-2 ml-[.5em] hover:cursor-pointer hover:w-[52%] duration-200 hover:transition-all" src="./img/logo nobg small.png" width={150} alt="" />
             </Link>
+
             <nav className="md:!flex hidden "> 
                 <div className=" relative flex gap-0 mx-auto items-center justify-center">
-                    <Link to={'.'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 h-full hover:cursor-pointer">Login</Link>
-                    <Link to={'.'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">My Lists</Link>
-                    <Link to={'.'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">Recipes</Link>
-                    <Link to={'/reciepts-web-app/about'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">About</Link>
+                    <NavLink to={'/shopping-list-web-app/login'} 
+                    className={(({isActive}) => { 
+                        return isActive ? 
+                        `text-lg text-black hover:!font-semibold transition-all duration-100 p-5 bg-orange-100/50 h-full cursor-pointer hover:!text-black` 
+                        : 'text-lg !text-black hover:!font-semibold transition-all duration-100 p-5 hover:!bg-orange-100/50 h-full hover:cursor-pointer'})}
+                    >Login</NavLink>
+
+                    <NavLink to={'/shopping-list-web-app/lists'} 
+                    className={(({isActive}) => { 
+                        return isActive ? 
+                        `text-lg text-black hover:!font-semibold transition-all duration-100 p-5 bg-orange-100/50 h-full cursor-pointer hover:!text-black` 
+                        : 'text-lg !text-black hover:!font-semibold transition-all duration-100 p-5 hover:!bg-orange-100/50 h-full hover:cursor-pointer'})}
+                    >My Lists</NavLink>
+                    
+                    <NavLink 
+                    to={'/shopping-list-web-app/recipes'} 
+                    className={(({isActive}) => { 
+                    return isActive ? 
+                        `text-lg text-black hover:!font-semibold transition-all duration-100 p-5 bg-orange-100/50 h-full cursor-pointer hover:!text-black` 
+                        : 'text-lg !text-black hover:!font-semibold transition-all duration-100 p-5 hover:!bg-orange-100/50 h-full hover:cursor-pointer'})}
+                    >Recipes</NavLink>
+                    
+                    <NavLink to={'/shopping-list-web-app/about'} 
+                    className={(({isActive}) => { 
+                        return isActive ? 
+                        `text-lg text-black hover:!font-semibold transition-all duration-100 p-5 bg-orange-100/50 h-full cursor-pointer hover:!text-black` 
+                        : 'text-lg !text-black hover:!font-semibold transition-all duration-100 p-5 hover:!bg-orange-100/50 h-full hover:cursor-pointer'})}
+                    >About</NavLink>
                 </div>
-       
             </nav>
             <div className="flex md:hidden flex-row items-center">
-
                 <div className="md:hidden flex mx-auto lg:pr-4 -right-3 cursor-pointer relative mt-1 mr-[.5em]">
                     <div id="mobile-menu-button"  onClick={()=>{ setIsSidebarEnabled(!isSidebarEnabled)}} className={`group ${isSidebarEnabled ? "open" : ""}`}>
                         <div className={`bg-black rounded-full relative t w-8 transition-all duration-200 h-1 ${isSidebarEnabled ? "rotate-45 top-2" : ""}`}></div>
