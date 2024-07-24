@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function NavBar(){
     const [isSidebarEnabled,setIsSidebarEnabled] = useState(false);
@@ -10,10 +11,10 @@ function NavBar(){
             </div>
             <nav className="md:!flex hidden "> 
                 <div className=" relative flex gap-0 mx-auto items-center justify-center">
-                    <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 h-full hover:cursor-pointer">Login</div>
-                    <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">My Lists</div>
-                    <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">Recipes</div>
-                    <div  className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">About</div>
+                    <Link to={'./login'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 h-full hover:cursor-pointer">Login</Link>
+                    <Link to={'./lists'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">My Lists</Link>
+                    <Link to={'./recipes'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">Recipes</Link>
+                    <Link to={'./about'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">About</Link>
                 </div>
        
             </nav>

@@ -1,11 +1,8 @@
-import Cards from './components/Cards'
+import Cards from './components/IndexCards'
 import Footer from './components/Footer'
 import NavBar from './components/NavBar'
 
-import './input.css'
-
-function App() {
-
+function Index() {
   return (
     <>
       <NavBar/>
@@ -15,4 +12,4 @@ function App() {
   )
 }
 
-export default App
+export default Index
