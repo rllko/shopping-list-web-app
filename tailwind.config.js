@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors:{
-        'orange-light':'rgba(238, 238, 238, 0.816)',
+        'orange-light':'rgba(255, 255, 255, 0.816)',
       },
       boxShadow: {
         'solid': '3px 3px 0 0 rgb(0 0 0)',
