@@ -1,20 +1,20 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function NavBar(){
     const [isSidebarEnabled,setIsSidebarEnabled] = useState(false);
     return(
     <main className="sticky top-0 z-50 bg-white ">
-        <header className=" flex items-center justify-between w-full max-w-[95%] sm:max-w-2xl md:max-w-5xl xl:max-w-7xl 2xl:max-w-[90%] md:mx-auto">
-            <div>
-                <img className="p-2 ml-[.5em] hover:cursor-pointer" src="./img/logo nobg small.png" width={150} alt="" />
-            </div>
+        <header className="flex items-center overflow-hidden justify-between w-full max-w-[95%] sm:max-w-2xl md:max-w-5xl xl:max-w-7xl 2xl:max-w-[90%] md:mx-auto">
+            <Link className="" to={'/reciepts-web-app/'}>
+                <img className="p-2 ml-[.5em] hover:cursor-pointer hover:w-[52%] duration-200 hover:transition-all" src="./img/logo nobg small.png" width={150} alt="" />
+            </Link>
             <nav className="md:!flex hidden "> 
                 <div className=" relative flex gap-0 mx-auto items-center justify-center">
-                    <Link to={'./login'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 h-full hover:cursor-pointer">Login</Link>
-                    <Link to={'./lists'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">My Lists</Link>
-                    <Link to={'./recipes'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">Recipes</Link>
-                    <Link to={'./about'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">About</Link>
+                    <Link to={'.'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 h-full hover:cursor-pointer">Login</Link>
+                    <Link to={'.'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">My Lists</Link>
+                    <Link to={'.'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">Recipes</Link>
+                    <Link to={'/reciepts-web-app/about'} className="text-lg text-black hover:font-semibold transition-all duration-100 p-5 hover:bg-orange-100/50 hover:cursor-pointer">About</Link>
                 </div>
        
             </nav>
