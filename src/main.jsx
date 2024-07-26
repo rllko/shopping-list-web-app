@@ -9,6 +9,7 @@ import NotFoundPage from './Pages/components/NotFound.jsx';
 import Index from './Pages/Index/Index.jsx';
 import About from './Pages/About/About.jsx';
 import Recipes from './Pages/Recipes/Recipes.jsx';
+import Recipe from './Pages/Recipes/Recipe.jsx';
 
 const router = createBrowserRouter([{
   path: '/',
@@ -28,9 +29,12 @@ const router = createBrowserRouter([{
   path:'/shopping-list-web-app/lists',
   element: <NotFoundPage/>,
   },{
-  path:'/shopping-list-web-app/recipes',
+  path:'/shopping-list-web-app/recipes/',
   element: <Recipes/>,
-}]) 
+  },{
+    path: '/shopping-list-web-app/recipes/:recipeId',
+    element: <Recipe/>,
+  }]) 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
