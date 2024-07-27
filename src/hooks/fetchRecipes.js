@@ -13,3 +13,15 @@ export const fetchRecipes = async (query) => {
 
     }
 }
+
+export const fetchSingleRecipe = async (id) => {
+    const BASE_URL = `https://dummyjson.com/recipes/`
+
+    const response = await fetch(BASE_URL + id)
+    if(!response.ok){
+        throw new Error(`API call failed: ${response.status}`)
+    }
+    const data = await response.json()
+    return data;
+
+}
