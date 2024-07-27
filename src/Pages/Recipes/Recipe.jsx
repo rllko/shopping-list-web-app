@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams,Link } from "react-router-dom";
 import NotFoundPage from "../components/NotFound";
 import { fetchSingleRecipe } from "../../hooks/fetchRecipes";
 import { useState,useEffect } from "react";
@@ -62,11 +62,11 @@ export default function Recipe() {
                         <span className="mx-auto">{recipe.name}</span>
                     </div>
 
-                    <div className="relative my-4">
+                    <div className="relative mb-4">
                         {/* Middle line */}
-                        <div className=" absolute w-[1px] h-full bg-black bottom-0 top-0 left-[48%] "></div>
+                        <div className=" absolute w-[1px] h-full bg-black bottom-0  top-0 left-[48%] "></div>
 
-                        <div className=" text-black grid text-[0.8em] grid-cols-2">
+                        <div className=" text-black grid text-[0.8em] xl:text-sm 2xl:text-xl grid-cols-2">
                             {/* First Column */}
                             <div className="flex flex-col my-2 ">
                                 <div className="w-[90%] border-b-[1px] border-black" >
@@ -153,23 +153,22 @@ export default function Recipe() {
                         </div>
                     </div>
                 </section>
-                <section className="text-black  pl-2 border-black">
-                <div>
-                    <div className="hidden md:!flex">
+                <section className="text-black flex space-y-2 flex-col md:pl-2 border-black">
+                    <div className="hidden md:!flex flex-col md:p-1">
                         <div className="w-full mb-2 border-b-[1px] border-black" >
-                        <h2 className="text-xl  w-full font-bold mb-2">Recipe Name</h2>
-                            <p className="">
+                        <h2 className="text-xl w-full font-bold mb-2">Recipe Name</h2>
+                            <p >
                                 {recipe.name}
                             </p>
                         </div>
 
                     </div>
-                    <div>
+                    <div className="md:p-1">
                         <h2 className="text-xl font-bold mb-2">Ingredients</h2>
-                        <ul className="list-disc text-xl  list-inside">
+                        <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-xl list-inside">
                             {recipe.ingredients.map((ingredient,index) => (
                                 <>
-                                <div className="flex gap-3">
+                                <div className="flex gap-2">
                                 <div  className="w-4 h-4 mt-2 border cursor-pointer border-black">
 
                                 </div>
@@ -179,9 +178,9 @@ export default function Recipe() {
                             ))}
                         </ul>
                     </div>
-                    <div className="my-2 mb-4">
-                        <h2 className="text-xl font-bold mb-2">Directions</h2>
-                        <ul className="list-disc text-xl  list-inside">
+                    <div className="md:p-1 mb-4 w-full">
+                        <h2 className="text-xl font-bold">Directions</h2>
+                        <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-xl list-inside">
                             {recipe.instructions.map((instruction,index) => (
                                 <>
                                 <li className="list-decimal my-2 w-full border-black" key={index}>{instruction}</li>
@@ -189,9 +188,11 @@ export default function Recipe() {
                             ))}
                         </ul>
                     </div>
-                </div>
                 </section>
                 </main>
+        </div>
+        <div className="my-2 flex justify-center">
+            <Link className="bg-orange-300 p-2 block w-fit hover:font-bold hover:text-black border border-black text-black rounded-md" to={'/shopping-list-web-app/recipes/'}>Back</Link>
         </div>
     </div>)
 }
