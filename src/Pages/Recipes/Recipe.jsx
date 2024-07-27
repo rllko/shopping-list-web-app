@@ -53,12 +53,12 @@ export default function Recipe() {
                     </header>
                 </div>       
             </div>
-            <main className=" grid gap-2 divide-x-1 grid-cols-1  md:grid-cols-[0.35fr,0.65fr] xl:grid-cols-[0.30fr,0.70fr]">
+            <main className=" grid gap-1 divide-x-1 grid-cols-1  md:grid-cols-[0.35fr,0.65fr] xl:grid-cols-[0.30fr,0.70fr]">
                 <section>
                     <div className="mt-2">                        
                         <img src={recipe.image} className="border border-black mx-auto w-[80%] md:mx-0 md:w-full  xl:w-full mb-2" width={400} alt="" />
                     </div>
-                    <div className="text-black font-bold text-[1em] flex md:hidden my-2">
+                    <div className="text-black font-bold text-[0.8em] xl:text-sm 2xl:text-xl flex md:hidden my-2">
                         <span className="mx-auto">{recipe.name}</span>
                     </div>
 
@@ -70,7 +70,7 @@ export default function Recipe() {
                             {/* First Column */}
                             <div className="flex flex-col my-2 ">
                                 <div className="w-[90%] border-b-[1px] border-black" >
-                                    <p className="">
+                                    <p className="font-light">
                                         Serves
                                     </p>
                                     <span>
@@ -82,7 +82,7 @@ export default function Recipe() {
 
                             {/* Second Column */}
                             <div className="w-full my-2 border-b-[1px] border-black" >
-                                <p className="">
+                                <p className="font-light">
                                     Prep Time
                                 </p>
                                     <span>
@@ -92,8 +92,8 @@ export default function Recipe() {
 
                             {/* First Column */}    
                             <div className="w-[90%] border-b-[1px] border-black" >
-                                <p className="">
-                                    cal. per serving
+                                <p className="font-light">
+                                    cals per serving
                                 </p>
                                 <span>
                                     {recipe.caloriesPerServing} kcal
@@ -102,7 +102,7 @@ export default function Recipe() {
 
                             {/* Second Column */}
                             <div className="w-full border-b-[1px] border-black" >
-                                <p className="">
+                                <p className="font-light">
                                     Cook Time
                                 </p>
                                 <span>
@@ -112,7 +112,7 @@ export default function Recipe() {
 
                             {/* First Column */}    
                             <div className="w-[90%] my-2 border-b-[1px] border-black" >
-                                <p className="">
+                                <p className="font-light">
                                     Difficulty
                                 </p>
                                 <span>
@@ -122,7 +122,7 @@ export default function Recipe() {
 
                             {/* Second Column */}
                             <div className="w-full my-2 border-b-[1px] border-black" >
-                                <p className="">
+                                <p className="font-light">
                                    Rating
                                 </p>
                                 <span>
@@ -132,7 +132,7 @@ export default function Recipe() {
 
                             {/* First Column */}    
                             <div className="w-[90%] border-b-[1px] border-black" >
-                                <p className="">
+                                <p className="font-light">
                                     Cuisine
                                 </p>
                                 <span>
@@ -142,7 +142,7 @@ export default function Recipe() {
 
                             {/* Second Column */}
                             <div className="w-full border-b-[1px] border-black" >
-                                <p className="">
+                                <p className="font-light">
                                    Total Time
                                 </p>
                                 <span>
@@ -155,32 +155,30 @@ export default function Recipe() {
                 </section>
                 <section className="text-black flex space-y-2 flex-col md:pl-2 border-black">
                     <div className="hidden md:!flex flex-col md:p-1">
-                        <div className="w-full mb-2 border-b-[1px] border-black" >
-                        <h2 className="text-xl w-full font-bold mb-2">Recipe Name</h2>
-                            <p >
+                        <div className="w-full mb-2  border-black" >
+                        <h2 className="text-base w-full font-light">Recipe Name</h2>
+                            <p className="text-sm md:text-base font xl:text-lg 2xl:text-xl">
                                 {recipe.name}
                             </p>
                         </div>
 
                     </div>
                     <div className="md:p-1">
-                        <h2 className="text-xl font-bold mb-2">Ingredients</h2>
-                        <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-xl list-inside">
+                        <h2 className="text-lg font-light mb-2">Ingredients</h2>
+                        <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-lg list-inside">
                             {recipe.ingredients.map((ingredient,index) => (
                                 <>
-                                <div className="flex gap-2">
-                                <div  className="w-4 h-4 mt-2 border cursor-pointer border-black">
-
-                                </div>
-                                <li className="list-none border-b-[1px] w-full border-black" key={index}>{ingredient}</li>
+                                <div className="flex gap-2 items-center">
+                                <input type="checkbox" style={{backgroundColor: 'white'}} className="accent-orange-500 invert checked:invert-0 text-emerald-500 checked:bg-sky-700 border-white h-6 w-6 bg-white"/>
+                                <li className="list-none border-b-[1px] mb-1 w-full border-black" key={index}>{ingredient}</li>
                                 </div>
                                 </>
                             ))}
                         </ul>
                     </div>
                     <div className="md:p-1 mb-4 w-full">
-                        <h2 className="text-xl font-bold">Directions</h2>
-                        <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-xl list-inside">
+                        <h2 className="text-xl font-light">Directions</h2>
+                        <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-lg list-inside">
                             {recipe.instructions.map((instruction,index) => (
                                 <>
                                 <li className="list-decimal my-2 w-full border-black" key={index}>{instruction}</li>
