@@ -7,9 +7,9 @@ export default function RelatedRecipes({recipes,handleSelectRecipe}) {
                 <div className="flex md:flex-row gap-2 justify-center flex-wrap md:flex-nowrap">
                     {   
                         recipes && recipes.map((recipe) => (
-                            <div key={recipe.id} onClick={() => handleSelectRecipe(recipe.id)} className=" border border-black text-sm w-[40%] md:w-1/2 text-black cursor-pointer p-2 rounded-lg  ">
+                            <div key={recipe.id} onClick={() => handleSelectRecipe(recipe.id)} className=" border  border-black text-sm w-[40%] md:w-1/2 text-black cursor-pointer p-2 rounded-lg  ">
                                 <div>
-                                    <img className="" src={recipe.image} alt={recipe.image} />
+                                    <img className="max-w-[230px] mx-auto" src={recipe.image} alt={recipe.image} />
                                 </div>
                                 <h1 className="text-base font-bold">{recipe.name}</h1>
                                 <p className="text-xs">{recipe.difficulty}</p>

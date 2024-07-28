@@ -27,7 +27,7 @@ export default function Recipe() {
             try{
                 const data = await fetchRecipes(`/tag/${recipe.cuisine}`);
                 const filteredRecipes = data.recipes.filter((r) => r.id != recipe.id);
-                setRelatedRecipes(filteredRecipes );
+                setRelatedRecipes(filteredRecipes.slice(0,5));
                 console.log(data.recipes.filter((r) => r.id != recipe.id));
 
             }catch(error){
