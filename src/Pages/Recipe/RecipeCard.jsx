@@ -123,7 +123,7 @@ export default function RecipeCard({recipe}) {
                         </div>
                     </div>
                 </section>
-                <section className="text-black grid grid-rows-[0.2fr,1fr,1fr] md:pl-2 border-black">
+                <section className="text-black grid grid-rows-2  md:grid-rows-[0.2fr,1fr,1fr] md:pl-2 border-black">
                     <div className="hidden md:!flex flex-col md:p-1">
                         <div className="w-full  border-black" >
                         <h2 className="text-base w-full font-light">Recipe Name</h2>

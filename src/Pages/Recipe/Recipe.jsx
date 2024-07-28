@@ -51,7 +51,7 @@ export default function Recipe() {
         <main className="!min-h-screen">
             <NavBar/>
             { recipe && <RecipeCard recipe={recipe}/>}
-            { <RelatedRecipes recipes={relatedRecipes} handleSelectRecipe={handleSelectRecipe}/>}
+            <RelatedRecipes recipes={relatedRecipes} handleSelectRecipe={handleSelectRecipe}/>
             <Footer/>
         </main>
    )
