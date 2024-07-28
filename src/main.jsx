@@ -9,7 +9,7 @@ import NotFoundPage from './Pages/components/NotFound.jsx';
 import Index from './Pages/Index/Index.jsx';
 import About from './Pages/About/About.jsx';
 import Recipes from './Pages/Recipes/Recipes.jsx';
-import Recipe from './Pages/Recipes/Recipe.jsx';
+import Recipe from './Pages/Recipe/Recipe.jsx';
 
 const router = createBrowserRouter([{
   path: '/',

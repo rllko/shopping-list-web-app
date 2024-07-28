@@ -1,4 +1,5 @@
-import Card from "./Card"
+
+import { Link } from "react-router-dom"
 
 export default function RecipesCarousel({title,recipes}) {
     return (
@@ -7,7 +8,12 @@ export default function RecipesCarousel({title,recipes}) {
         <div className="flex md:flex-row flex-col">
             {
                 recipes.map((recipe) => (
-                    <Card id={recipe.id} title={recipe.name} image={recipe.image} key={recipe.id}/>
+                    <Link to={'./'+recipe.id} key={recipe.id} className="bg-orange-900  text-black cursor-pointer p-2 m-4 rounded-lg shadow-solid w-[20%]">
+                        <div>
+                            <img src={recipe.image} alt={recipe.image} />
+                        </div>
+                        <h1 className="text-2xl font-bold">{recipe.name}</h1>
+                    </Link>
                 ))
             }
         </div>

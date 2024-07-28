@@ -1,38 +1,8 @@
-import { useParams,Link } from "react-router-dom";
-import NotFoundPage from "../components/NotFound";
-import { fetchSingleRecipe } from "../../hooks/fetchRecipes";
-import { useState,useEffect } from "react";
+import { Link } from "react-router-dom";
 
-export default function Recipe() {
-    const params = useParams()
-
-    if(isNaN(parseInt(params.recipeId)))
-        return (<NotFoundPage/>)
-    
-    const recipeId = parseInt(params.recipeId);
-    const [recipe,setRecipe] = useState(null);
-
-    useEffect(() => {
-        async function fetchData(recipeId){
-            try{
-                const data = await fetchSingleRecipe(recipeId);
-                setRecipe(data)
-            }catch(error){
-                if(error.name != 'AbortError'){
-                    console.log('Failed to fetch books:', error);
-                }else{
-                    throw error;
-                }
-            }
-        }
-
-        fetchData(recipeId);
-        console.log(recipe)
-
-    }, []);
-    if(recipe)
-    return (
-    <div className="lg:max-w-2xl xl:max-w-6xl 2xl:max-w-7xl bg-white m-auto  py-5 px-8">
+export default function RecipeCard({recipe}) {
+    return ( 
+    <div className="lg:max-w-6xl my-2 xl:max-w-7xl rounded-md bg-white m-auto py-5 px-8">
         <div className=" border-8 border-orange-500 h-full px-5">
             <div className="relative -top-1 border-b-2 border-orange-500  w-full">
                 <div className="relative flex items-center">
@@ -53,12 +23,12 @@ export default function Recipe() {
                     </header>
                 </div>       
             </div>
-            <main className=" grid gap-1 divide-x-1 grid-cols-1  md:grid-cols-[0.35fr,0.65fr] xl:grid-cols-[0.30fr,0.70fr]">
+            <main className=" grid gap-1 divide-x-1 grid-cols-1  md:grid-cols-[0.35fr,0.65fr] xl:grid-cols-[0.30fr,0.70fr] m-1">
                 <section>
                     <div className="mt-2">                        
-                        <img src={recipe.image} className="border border-black mx-auto w-[80%] md:mx-0 md:w-full  xl:w-full mb-2" width={400} alt="" />
+                        <img src={recipe.image} className="border border-black mx-auto w-[90%] md:w-[90%] lg:mx-0 lg:w-full  xl:w-full mb-2" width={400} alt="" />
                     </div>
-                    <div className="text-black font-bold text-[0.8em] xl:text-sm 2xl:text-xl flex md:hidden my-2">
+                    <div className="text-black font-bold text-base xl:text-base 2xl:text-xl flex md:hidden my-2">
                         <span className="mx-auto">{recipe.name}</span>
                     </div>
 
@@ -123,7 +93,7 @@ export default function Recipe() {
                             {/* Second Column */}
                             <div className="w-full my-2 border-b-[1px] border-black" >
                                 <p className="font-light">
-                                   Rating
+                                Rating
                                 </p>
                                 <span>
                                     {recipe.rating} ⭐
@@ -143,7 +113,7 @@ export default function Recipe() {
                             {/* Second Column */}
                             <div className="w-full border-b-[1px] border-black" >
                                 <p className="font-light">
-                                   Total Time
+                                Total Time
                                 </p>
                                 <span>
                                 {recipe.cookTimeMinutes + recipe.prepTimeMinutes} minutes
@@ -153,11 +123,11 @@ export default function Recipe() {
                         </div>
                     </div>
                 </section>
-                <section className="text-black flex space-y-2 flex-col md:pl-2 border-black">
+                <section className="text-black grid grid-rows-[0.2fr,1fr,1fr] md:pl-2 border-black">
                     <div className="hidden md:!flex flex-col md:p-1">
-                        <div className="w-full mb-2  border-black" >
+                        <div className="w-full  border-black" >
                         <h2 className="text-base w-full font-light">Recipe Name</h2>
-                            <p className="text-sm md:text-base font xl:text-lg 2xl:text-xl">
+                            <p className="text-sm md:text-base font-semibold xl:text-xl 2xl:text-2xl">
                                 {recipe.name}
                             </p>
                         </div>
@@ -167,22 +137,22 @@ export default function Recipe() {
                         <h2 className="text-lg font-light mb-2">Ingredients</h2>
                         <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-lg list-inside">
                             {recipe.ingredients.map((ingredient,index) => (
-                                <>
-                                <div className="flex gap-2 items-center">
-                                <input type="checkbox" style={{backgroundColor: 'white'}} className="accent-orange-500 invert checked:invert-0 text-emerald-500 checked:bg-sky-700 border-white h-6 w-6 bg-white"/>
-                                <li className="list-none border-b-[1px] mb-1 w-full border-black" key={index}>{ingredient}</li>
+                                <div key={index} className="flex gap-2 items-center">
+                                    <input type="checkbox" style={{backgroundColor: 'white'}} className="accent-orange-500 invert checked:invert-0 text-emerald-500 checked:bg-sky-700 border-white h-6 w-6 bg-white"/>
+                                    <li className="list-none border-b-[1px] mb-1 w-full border-black" key={index}>{ingredient}</li>
                                 </div>
-                                </>
                             ))}
                         </ul>
+                        <div className="relative w-fit text-sm justify-self-start font-medium">*Tick the Ingredients you already have</div>
                     </div>
+
                     <div className="md:p-1 mb-4 w-full">
                         <h2 className="text-xl font-light">Directions</h2>
-                        <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-lg list-inside">
+                        <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-xl list-inside">
                             {recipe.instructions.map((instruction,index) => (
-                                <>
+                                <div key={index}>
                                 <li className="list-decimal my-2 w-full border-black" key={index}>{instruction}</li>
-                                </>
+                                </div>
                             ))}
                         </ul>
                     </div>

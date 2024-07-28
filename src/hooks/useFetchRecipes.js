@@ -23,8 +23,9 @@ export function useFetchRecipes(query) {
                 setIsLoading(false);
             }
         }
-
-        fetchData(searchQuery);
+        console.log(searchQuery)
+        if(searchQuery)
+            fetchData(searchQuery);
     }, [searchQuery]);
 
     return {recipes,error,isLoading} 
