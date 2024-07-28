@@ -23,12 +23,12 @@ export default function RecipeCard({recipe}) {
                     </header>
                 </div>       
             </div>
-            <main className=" grid gap-1 divide-x-1 grid-cols-1  md:grid-cols-[0.35fr,0.65fr] xl:grid-cols-[0.30fr,0.70fr] m-1">
-                <section>
+            <main className=" grid gap-1 divide-x-1 grid-rows-[0.99fr,0.3fr] md:grid-cols-[0.35fr,0.65fr] xl:grid-cols-[0.30fr,0.70fr] m-1">
+                <section className="min-h-full mb-7 flex flex-col md:space-y-5">
                     <div className="mt-2">                        
                         <img src={recipe.image} className="border border-black mx-auto w-[90%] md:w-[90%] lg:mx-0 lg:w-full  xl:w-full mb-2" width={400} alt="" />
                     </div>
-                    <div className="text-black font-bold text-base xl:text-base 2xl:text-xl flex md:hidden my-2">
+                    <div className="text-black font-bold text-3xl xl:text-base 2xl:text-xl flex md:hidden my-2">
                         <span className="mx-auto">{recipe.name}</span>
                     </div>
 
@@ -36,7 +36,7 @@ export default function RecipeCard({recipe}) {
                         {/* Middle line */}
                         <div className=" absolute w-[1px] h-full bg-black bottom-0  top-0 left-[48%] "></div>
 
-                        <div className=" text-black grid text-[0.8em] xl:text-sm 2xl:text-xl grid-cols-2">
+                        <div className=" text-black grid text-[0.9em] my-2 xl:text-sm 2xl:text-xl grid-cols-2">
                             {/* First Column */}
                             <div className="flex flex-col my-2 ">
                                 <div className="w-[90%] border-b-[1px] border-black" >
@@ -127,7 +127,7 @@ export default function RecipeCard({recipe}) {
                     <div className="hidden md:!flex flex-col md:p-1">
                         <div className="w-full  border-black" >
                         <h2 className="text-base w-full font-light">Recipe Name</h2>
-                            <p className="text-sm md:text-base font-semibold xl:text-xl 2xl:text-2xl">
+                            <p className=" font-semibold md:text-2xl xl:text-3xl 2xl:text-3xl">
                                 {recipe.name}
                             </p>
                         </div>
@@ -151,7 +151,7 @@ export default function RecipeCard({recipe}) {
                         <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-xl list-inside">
                             {recipe.instructions.map((instruction,index) => (
                                 <div key={index}>
-                                <li className="list-decimal my-2 w-full border-black" key={index}>{instruction}</li>
+                                <li className="list-decimal mt-2 w-full border-black" key={index}>{instruction}</li>
                                 </div>
                             ))}
                         </ul>
