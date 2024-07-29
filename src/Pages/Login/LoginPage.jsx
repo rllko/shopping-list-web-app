@@ -31,8 +31,7 @@ export default function LoginPage() {
                         </div>
                         
                         <div className="flex flex-col">
-                            <LoginForm setEmail={setEmail} setUsername={setUsername} setRepeatPassword={setSetRepeatPassword} 
-                                            setPassword={setPassword} handleSubmitLogin={handleSubmitLogin}/>
+                            <LoginForm setEmail={setEmail} setPassword={setPassword} handleSubmitLogin={handleSubmitLogin}/>
                         </div>
                     </div>
                 </div>
