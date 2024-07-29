@@ -7,6 +7,11 @@ import RecipeCard from "./RecipeCard";
 import { fetchRecipes } from "../../hooks/fetchRecipes";
 import Footer from "../components/Footer";
 import RelatedRecipes from "./RelatedRecipes";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight,faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import ReactTextareaAutosize from "react-textarea-autosize";
+import { useLocalStorage } from "../../hooks/useLocalStorage";
+
 
 export default function Recipe() {
     const params = useParams()
@@ -15,21 +20,26 @@ export default function Recipe() {
         return (<NotFoundPage/>)
 
     const [recipeId,setRecipeId] = useState(parseInt(params.recipeId));
-    const [isLoading,setLoading] = useState(true);
+
     const {recipe} = useFetchSingleRecipe({recipeId});
     
     const [relatedRecipes,setRelatedRecipes] = useState(undefined);
 
+    const [notesHidden,setNotesHidden] = useState(true);
+    const [notesContent,setNotesContent] = useState("");
+
     useEffect( () => {
         if(!recipe)
             return;
+
         async function fetchData(){
             try{
                 const data = await fetchRecipes(`/tag/${recipe.cuisine}`);
+                const {getItem} = useLocalStorage(recipe.id)
                 const filteredRecipes = data.recipes.filter((r) => r.id != recipe.id);
                 setRelatedRecipes(filteredRecipes.slice(0,5));
-                console.log(data.recipes.filter((r) => r.id != recipe.id));
-
+                setNotesContent(getItem())
+                
             }catch(error){
                 if(error.name != 'AbortError'){
                     console.log('Failed to fetch books:', error);
@@ -39,19 +49,59 @@ export default function Recipe() {
             }
         }
         fetchData();
-        setLoading(false);
     },[recipe]);
+
     
-    function handleSelectRecipe(id){
+    function handleChangeRecipe(id){
         params.recipeId = id;
         setRecipeId(id)
     }
 
+    function handleSaveNote(){
+        if(!recipe)
+            return;
+        
+        const {setItem} = useLocalStorage(recipe.id)
+        setItem(notesContent)
+    }
+
+    function handleClearNote(){
+        if(!recipe)
+            return;
+        
+        const {setItem} = useLocalStorage(recipe.id)
+        
+        setNotesContent('')
+        setItem("")
+    }
+        
     return (
-        <main className="!min-h-screen">
+        <main className=" bg-neutral-900 overflow-auto">
             <NavBar/>
-            { recipe && <RecipeCard recipe={recipe}/>}
-            <RelatedRecipes recipes={relatedRecipes} handleSelectRecipe={handleSelectRecipe}/>
+                <div className="relative">
+                    { recipe && <RecipeCard recipe={recipe}/>}
+                    <RelatedRecipes recipes={relatedRecipes} handleChangeRecipe={handleChangeRecipe}/>
+        
+                    <div className="min-w-58">
+                        <div className={`transition-all p-0.5 pt-0 duration-500 ${notesHidden ? '-right-[79vw] md:-right-[16.6em]' : 'right-1'} p-1 absolute top-12 rounded-md  bg-white border border-black`}>
+                        <button onClick={()=> setNotesHidden(!notesHidden)} className="absolute top-0 -left-9 bg-orange-400 p-2 text-lg rounded-md text-white">
+                            <FontAwesomeIcon icon={notesHidden ? faArrowLeft : faArrowRight} />
+                        </button>
+                            <p className=" font-semibold">Note: </p>
+                            <ReactTextareaAutosize 
+                            name="" 
+                            value={notesContent} 
+                            onChange={(e) => setNotesContent(e.target.value)} 
+                            minRows={5}
+                            className=" resize-none outline-none bg-neutral-600 overflow-auto px-1 text-base h-fit rounded-sm text-zinc-100 min-w-64 w-full" id=""/>
+                            <div className="flex gap-2 justify-end">
+                                <button onClick={handleClearNote} className="text-sm">Clear</button>
+                                <button onClick={handleSaveNote} className="bg-orange-500 text-sm text-white">Save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             <Footer/>
         </main>
    )

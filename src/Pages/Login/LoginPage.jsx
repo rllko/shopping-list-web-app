@@ -17,17 +17,9 @@ export default function LoginPage() {
         console.log("Password: ", password);
     }
 
-    function handleSubmitRegister(){
-        console.log("Username: ", username);
-        console.log("Email: ", email);
-        console.log("Password: ", password);
-        console.log("Repeat Password: ", repeatPassword);
-    }
-
     return (
     <main className="min-h-screen grid grid-rows-[auto,1fr,auto] bg-gradient-to-l from-orange-400 to-orange-500">
         <NavBar/>
-        
         <section className="relative overflow-hidden md:grid content-center grid-cols-[1fr,auto] xl:grid-cols-[0.65fr,auto]">
             <div className="flex flex-col my-auto items-center justify-center">
 
