@@ -21,8 +21,7 @@ export default function AboutContent() {
                     </h2>
                     <p> 
                     Mixlist aims to provide the best experience to its users, offering quick costumer support,
-                    its secure and easy to use anmd has a simple and intuitive interface and offers 
-                    a wide range of features to help you organize your shopping lists.
+                    a secure and easy to use interface and offers a wide range of features to help you organize your shopping lists.
                     </p>
                 </section>
 

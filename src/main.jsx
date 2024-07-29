@@ -10,6 +10,8 @@ import Index from './Pages/Index/Index.jsx';
 import About from './Pages/About/About.jsx';
 import Recipes from './Pages/Recipes/Recipes.jsx';
 import Recipe from './Pages/Recipe/Recipe.jsx';
+import LoginPage from './Pages/Login/LoginPage.jsx';
+import RegisterPage from './Pages/Login/RegisterPage.jsx';
 
 const router = createBrowserRouter([{
   path: '/',
@@ -24,8 +26,11 @@ const router = createBrowserRouter([{
   element: <About/>,
   },{
   path:'/shopping-list-web-app/login',
-  element: <NotFoundPage/>,
+  element: <LoginPage/>,
   },{
+    path:'/shopping-list-web-app/register',
+    element: <RegisterPage/>,
+    },{
   path:'/shopping-list-web-app/lists',
   element: <NotFoundPage/>,
   },{

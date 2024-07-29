@@ -1,4 +1,7 @@
+import { Link } from "react-router-dom";
+
 function Cards(){
+    
     return(
     <div className="grid grid-rows-[1fr,.9fr,0.8fr] overflow-hidden gap-0 bg-white ">
         <section className="bg-gradient-to-br from-orange-300 border-b-[1px] border-zinc-200 sm:border-0 to-orange-400">
@@ -25,13 +28,13 @@ function Cards(){
                     <p className="text-zinc-600 text-center my-1 text-base md:text-xl md:w-[90%] w-[60%] 2xl:w-[80%] mb-4 xl:text-xl 2xl:text-2xl lg:text-lg/6 md:pt-4">
                         Create a digital list to organize your shopping and save time and paper.
                     </p>
-                    <button className= 
+                    <Link to={'/shopping-list-web-app/register'} className= 
                     "text-sm mt-2 md:text-base xl:text-base mb-2 bg-transparent lg:block \
                     px-5 rounded-lg border-2 align-text-top border-black \
                     hover:bg-gradient-to-tr cursor-pointer text-black hover:from-orange-100 \
                     shadow-solid hover:to-orange-300 text-md hover:font-bold">
                         Plan your next journey
-                    </button>
+                    </Link>
                 </div>
             </div>
         </section>
