@@ -28,6 +28,11 @@ export default function Recipe() {
     const [notesHidden,setNotesHidden] = useState(true);
     const [notesContent,setNotesContent] = useState("");
 
+    const [LocalStorageData,setLocalStorageData] = useState({
+        note: "",
+        tickedIngredients: []
+    });
+
     useEffect( () => {
         if(!recipe)
             return;
@@ -35,10 +40,18 @@ export default function Recipe() {
         async function fetchData(){
             try{
                 const data = await fetchRecipes(`/tag/${recipe.cuisine}`);
-                const {getItem} = useLocalStorage(recipe.id)
                 const filteredRecipes = data.recipes.filter((r) => r.id != recipe.id);
                 setRelatedRecipes(filteredRecipes.slice(0,5));
-                setNotesContent(getItem())
+
+                const {getItem,setItem} = useLocalStorage(recipe.id)
+
+                if(getItem() == null){
+                    setItem(LocalStorageData)
+                }else{
+                   setLocalStorageData(getItem());
+                }
+
+                setNotesContent(getItem().note || "")
                 
             }catch(error){
                 if(error.name != 'AbortError'){
@@ -49,12 +62,16 @@ export default function Recipe() {
             }
         }
         fetchData();
+
     },[recipe]);
 
-    
     function handleChangeRecipe(id){
         params.recipeId = id;
         setRecipeId(id)
+        setLocalStorageData({
+            note: "",
+            tickedIngredients: []
+        })
     }
 
     function handleSaveNote(){
@@ -62,24 +79,45 @@ export default function Recipe() {
             return;
         
         const {setItem} = useLocalStorage(recipe.id)
-        setItem(notesContent)
+        LocalStorageData.note = notesContent;
+        setItem(LocalStorageData)
     }
 
     function handleClearNote(){
         if(!recipe)
             return;
-        
+
         const {setItem} = useLocalStorage(recipe.id)
-        
+
         setNotesContent('')
         setItem("")
+    }
+
+    function handleRecipeTick(Ingredient,e){
+        console.log("hi")
+        const {setItem} = useLocalStorage(recipe.id)
+ 
+        setLocalStorageData((prevData) => {
+            const updatedData = {
+                ...prevData,
+                tickedIngredients: {
+                    ...prevData.tickedIngredients,
+                    [Ingredient]: !prevData.tickedIngredients[Ingredient]
+                }
+            };
+    
+            setItem(updatedData);
+            e.target.checked = updatedData.tickedIngredients[Ingredient];
+    
+            return updatedData;
+        });
     }
         
     return (
         <main className=" bg-neutral-900 overflow-auto">
             <NavBar/>
                 <div className="relative">
-                    { recipe && <RecipeCard recipe={recipe}/>}
+                    { recipe && <RecipeCard recipe={recipe} tickedIngredients={LocalStorageData.tickedIngredients} handleRecipeTick={handleRecipeTick}/>}
                     <RelatedRecipes recipes={relatedRecipes} handleChangeRecipe={handleChangeRecipe}/>
         
                     <div className="min-w-58">

@@ -5,7 +5,7 @@ export function useLocalStorage(key){
 
     const getItem = () => {
         const value = window.localStorage.getItem(key)
-        return JSON.parse(value) || "";
+        return JSON.parse(value) || null;
     }
 
     return {setItem,getItem}

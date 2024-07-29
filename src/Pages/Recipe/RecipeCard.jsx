@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-export default function RecipeCard({recipe}) {
+export default function RecipeCard({recipe,tickedIngredients,handleRecipeTick}) {
+
     return ( 
     <div className="lg:max-w-6xl my-2 xl:max-w-7xl rounded-md bg-white m-auto py-5 px-8">
         <div className=" border-8 border-orange-500 h-full px-5">
@@ -138,7 +139,7 @@ export default function RecipeCard({recipe}) {
                         <ul className="list-disc text-sm md:text-base xl:text-lg 2xl:text-lg list-inside">
                             {recipe.ingredients.map((ingredient,index) => (
                                 <div key={index} className="flex gap-2 items-center">
-                                    <input type="checkbox" style={{backgroundColor: 'white'}} className="accent-orange-500 invert checked:invert-0 text-emerald-500 checked:bg-sky-700 border-white h-6 w-6 bg-white"/>
+                                    <input type="checkbox" style={{backgroundColor: 'white'}} checked={tickedIngredients[ingredient]} onChange={(e) => handleRecipeTick(ingredient,e)} className="accent-orange-500 invert checked:invert-0 text-emerald-500 checked:bg-sky-700 border-white h-6 w-6 bg-white"/>
                                     <li className="list-none border-b-[1px] mb-1 w-full border-black" key={index}>{ingredient}</li>
                                 </div>
                             ))}

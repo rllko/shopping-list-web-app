@@ -6,11 +6,8 @@ import RegisterForm from "./RegisterForm";
 import { useState } from "react";
 
 export default function LoginPage() {
-    const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [repeatPassword,setSetRepeatPassword] = useState("");
-    const [registerMode,setRegisterMode] = useState(false);
 
     function handleSubmitLogin(){
         console.log("Email: ", email);
