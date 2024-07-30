@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom"
 
 export default function RegisterForm({formik}) {
-    const {values,errors,handleChange,touched,isSubmitting,onBlur,handleSubmit} = formik;
+    const {values,
+        errors,
+        handleChange,
+        touched,
+        isSubmitting,
+        onBlur,
+        handleSubmit} = formik;
+    
     return (
         <form onSubmit={handleSubmit} autoComplete="off" className="flex flex-col gap-3 p-4 pb-0">
             <div>
@@ -67,6 +74,7 @@ export default function RegisterForm({formik}) {
                     Register
                 </button>
             </div>
+            
             <div className="flex justify-end items-center">
                 <Link draggable="false" to={"/shopping-list-web-app/login"} className="text-black lg:hidden hover:text-black">Already have an account? Login in</Link>
             </div>

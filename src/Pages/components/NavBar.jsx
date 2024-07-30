@@ -5,8 +5,8 @@ function NavBar(){
     const [isSidebarEnabled,setIsSidebarEnabled] = useState(false);
     return(
     <main className="sticky top-0 z-50 bg-white ">
-        <header className="flex items-center justify-between w-full max-w-[95%] sm:max-w-2xl md:max-w-5xl xl:max-w-7xl md:mx-auto">
-            <Link className="" to={'/shopping-list-web-app/'}>
+        <header className="flex items-center justify-between w-full max-w-[95%] sm:max-w-2xl md:max-w-5xl xl:max-w-7xl 2xl:max-w-7xl md:mx-auto">
+            <Link className="" draggable="false" to={'/shopping-list-web-app/'}>
                 <img className="p-2 ml-[.5em] hover:cursor-pointer hover:w-[52%] duration-200 hover:transition-all" draggable="false"  src="/shopping-list-web-app/img/logo nobg small.png" width={150} alt="" />
             </Link>
 
