@@ -8,9 +8,9 @@ export default function RecipesCarousel({title,recipes}) {
         <div className="flex md:flex-row flex-col">
             {
                 recipes.map((recipe) => (
-                    <Link to={'./'+recipe.id} key={recipe.id} className="bg-orange-900  text-black cursor-pointer p-2 m-4 rounded-lg shadow-solid w-[20%]">
+                    <Link to={'./'+recipe.id} draggable="false" key={recipe.id} className="bg-orange-900  text-black cursor-pointer p-2 m-4 rounded-lg shadow-solid w-[20%]">
                         <div>
-                            <img src={recipe.image} alt={recipe.image} />
+                            <img draggable="false" src={recipe.image} alt={recipe.image} />
                         </div>
                         <h1 className="text-2xl font-bold">{recipe.name}</h1>
                     </Link>

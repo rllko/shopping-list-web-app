@@ -27,7 +27,7 @@ export default function RecipeCard({recipe,tickedIngredients,handleRecipeTick}) 
             <main className=" grid gap-1 divide-x-1 grid-rows-[0.99fr,0.3fr] md:grid-cols-[0.35fr,0.65fr] xl:grid-cols-[0.30fr,0.70fr] m-1">
                 <section className="min-h-full mb-7 flex flex-col md:space-y-5">
                     <div className="mt-2">                        
-                        <img src={recipe.image} className="border border-black mx-auto w-[90%] md:w-[90%] lg:mx-0 lg:w-full  xl:w-full mb-2" width={400} alt="" />
+                        <img src={recipe.image} draggable="false" className="border border-black mx-auto w-[90%] md:w-[90%] lg:mx-0 lg:w-full  xl:w-full mb-2" width={400} alt="" />
                     </div>
                     <div className="text-black font-bold text-3xl xl:text-base 2xl:text-xl flex md:hidden my-2">
                         <span className="mx-auto">{recipe.name}</span>
@@ -161,7 +161,7 @@ export default function RecipeCard({recipe,tickedIngredients,handleRecipeTick}) 
                 </main>
         </div>
         <div className="my-2 flex justify-center">
-            <Link className="bg-orange-300 p-2 block w-fit hover:font-bold hover:text-black border border-black text-black rounded-md" to={'/shopping-list-web-app/recipes/'}>Back</Link>
+            <Link className="bg-orange-300 p-2 block w-fit hover:font-bold hover:text-black border border-black text-black rounded-md"  to={'/shopping-list-web-app/recipes/'} draggable="false">Back</Link>
         </div>
     </div>)
 }

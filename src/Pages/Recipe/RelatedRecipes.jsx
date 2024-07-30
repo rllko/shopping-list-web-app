@@ -9,7 +9,7 @@ export default function RelatedRecipes({recipes,handleChangeRecipe}) {
                         recipes && recipes.map((recipe) => (
                             <div key={recipe.id} onClick={() => handleChangeRecipe(recipe.id)} className=" border border-black text-sm   text-black cursor-pointer p-2 rounded-lg  ">
                                 <div>
-                                    <img className="max-w-[230px] mx-auto" src={recipe.image} alt={recipe.image} />
+                                    <img draggable="false" className="max-w-[230px] mx-auto" src={recipe.image} alt={recipe.image} />
                                 </div>
                                 <h1 className="text-base font-bold">{recipe.name}</h1>
                                 <p className="text-xs">{recipe.difficulty}</p>

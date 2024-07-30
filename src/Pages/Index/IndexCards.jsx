@@ -11,7 +11,7 @@ function Cards(){
                     Organize your next shopping spree
                 </h2>
                 <div>
-                    <img src="./img/app-compras.svg" className="w-[60%] mx-auto md:w-80 xl:w-72" alt="" />
+                    <img src="./img/app-compras.svg" className="w-[60%] mx-auto md:w-80 xl:w-72" draggable="false" alt="" />
                 </div>
             </div>
         </section>
@@ -21,7 +21,7 @@ function Cards(){
                             md:flex-nowrap 
                             xl:justify-center xl:max-w-6xl md:w-[90%] lg:w-[62%] 2xl:w-[60%]">
                 <div className="">
-                    <img src="./img/lista-mulher.svg" className="w-56 md:w-80 md:pr-6 scale-x-[-1]" 
+                    <img src="./img/lista-mulher.svg" draggable="false" className="w-56 md:w-80 md:pr-6 scale-x-[-1]" 
                     alt="lista-mulher.svg" />
                 </div>
                 <div className="flex flex-col items-center">
@@ -48,7 +48,7 @@ function Cards(){
                     Never run out of ideas with our large list of recipes that range from a simple cake to the best pasta.
                 </p>
             <div className=" my-4">
-                <img src="./img/receita.svg" className="absolute top-[12.5%]  block md:static -right-[40%]  md:w-92 md:initial md:block w-[40vh] " alt="" />
+                <img src="./img/receita.svg" className="absolute top-[12.5%]  block md:static -right-[40%]  md:w-92 md:initial md:block w-[40vh] " draggable="false" alt="" />
             </div>
             </div>
     </section>
