@@ -887,6 +887,18 @@ html{
   min-height: 100vh;
 }
 
+.min-h-\[90vh\]{
+  min-height: 90vh;
+}
+
+.min-h-\[92vh\]{
+  min-height: 92vh;
+}
+
+.min-h-\[93vh\]{
+  min-height: 93vh;
+}
+
 .w-0{
   width: 0px;
 }
@@ -1348,6 +1360,16 @@ html{
   background-color: rgb(255 237 213 / var(--tw-bg-opacity));
 }
 
+.bg-orange-50{
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 247 237 / var(--tw-bg-opacity));
+}
+
+.bg-amber-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(245 158 11 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-br{
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -1372,12 +1394,30 @@ html{
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
+.from-amber-600{
+  --tw-gradient-from: #d97706 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(217 119 6 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
 .to-orange-400{
   --tw-gradient-to: #fb923c var(--tw-gradient-to-position);
 }
 
 .to-orange-500{
   --tw-gradient-to: #f97316 var(--tw-gradient-to-position);
+}
+
+.to-amber-400{
+  --tw-gradient-to: #fbbf24 var(--tw-gradient-to-position);
+}
+
+.to-amber-500{
+  --tw-gradient-to: #f59e0b var(--tw-gradient-to-position);
+}
+
+.to-amber-600{
+  --tw-gradient-to: #d97706 var(--tw-gradient-to-position);
 }
 
 .p-0\.5{
@@ -2123,8 +2163,24 @@ html{
     grid-template-rows: .7fr .35fr;
   }
 
+  .lg\:grid-rows-\[\.6fr\2c \.35fr\]{
+    grid-template-rows: .6fr .35fr;
+  }
+
+  .lg\:grid-rows-\[\.65fr\2c \.35fr\]{
+    grid-template-rows: .65fr .35fr;
+  }
+
+  .lg\:grid-rows-\[\.65fr\2c \.20fr\]{
+    grid-template-rows: .65fr .20fr;
+  }
+
   .lg\:items-start{
     align-items: flex-start;
+  }
+
+  .lg\:items-center{
+    align-items: center;
   }
 
   .lg\:gap-12{
@@ -2181,6 +2237,16 @@ html{
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
+
+  @media (min-width: 1280px){
+    .lg\:xl\:mr-auto{
+      margin-right: auto;
+    }
+
+    .lg\:xl\:ml-auto{
+      margin-left: auto;
+    }
+  }
 }
 
 @media (min-width: 1280px){
@@ -2207,6 +2273,10 @@ html{
 
   .xl\:mt-0{
     margin-top: 0px;
+  }
+
+  .xl\:mr-auto{
+    margin-right: auto;
   }
 
   .xl\:w-1\/2{
