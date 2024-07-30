@@ -4,18 +4,26 @@ import NavBar from "../components/NavBar";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
 import { useState } from "react";
+import { useFormik } from "formik";
+import { registerSchema } from "../../schemas/registerSchema";
 
 export default function RegisterPage() {
-    const [username, setUsername] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [repeatPassword,setSetRepeatPassword] = useState("");
+    const formik = useFormik({
+        initialValues: {
+            username: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+            termsOfService: false,
+        },
+        onSubmit: handleSubmitRegister,
+        validationSchema: registerSchema,
+    })
 
     function handleSubmitRegister(){
-        console.log("Username: ", username);
-        console.log("Email: ", email);
-        console.log("Password: ", password);
-        console.log("Repeat Password: ", repeatPassword);
+        console.log("Username: ", formik.values.username);
+        console.log("Email: ", formik.values.email);
+        console.log("Password: ", formik.values.password);
     }
 
     return (
@@ -36,8 +44,7 @@ export default function RegisterPage() {
                         </div>
                         
                         <div className="flex flex-col justify-between">
-                        <RegisterForm setEmail={setEmail} setUsername={setUsername} setRepeatPassword={setSetRepeatPassword} 
-                setPassword={setPassword} handleSubmitRegister={handleSubmitRegister}/>
+                        <RegisterForm formik={formik}/>
                         </div>
                     </div>
                 </div>

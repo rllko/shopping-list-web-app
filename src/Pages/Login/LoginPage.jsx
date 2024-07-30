@@ -1,13 +1,19 @@
-import { Link } from "react-router-dom";
+import { useFormik } from "formik";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import LoginForm from "./LoginForm";
-import RegisterForm from "./RegisterForm";
 import { useState } from "react";
+import { loginSchema } from "../../schemas/loginSchema";
 
 export default function LoginPage() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
+    const formik = useFormik({
+        initialValues: {
+            email: '',
+            password: '',
+        },
+        validationSchema: loginSchema,
+        handleSubmitLogin,
+    })
 
     function handleSubmitLogin(){
         console.log("Email: ", email);
@@ -31,7 +37,7 @@ export default function LoginPage() {
                         </div>
                         
                         <div className="flex flex-col">
-                            <LoginForm setEmail={setEmail} setPassword={setPassword} handleSubmitLogin={handleSubmitLogin}/>
+                            <LoginForm formik={formik}/>
                         </div>
                     </div>
                 </div>
