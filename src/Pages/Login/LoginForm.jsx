@@ -39,7 +39,7 @@ export default function LoginForm({formik}) {
             </div>
             <div className="flex justify-end items-center">
                 <Link draggable="false" className="text-black lg:hidden hover:text-black" to={"#forgot"}>Forgot Password?</Link>
-                <Link draggable="false" to={"/shopping-list-web-app/register"} className=" p-1 text-black hover:text-black">Register</Link>
+                <Link draggable="false" to={"/register"} className=" p-1 text-black hover:text-black">Register</Link>
             </div>  
             
         </form>)

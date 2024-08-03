@@ -18,26 +18,26 @@ const router = createBrowserRouter([{
   element: <Index/>,
   errorElement: <NotFoundPage/>
   },{
-  path: '/shopping-list-web-app/',
+  path: '/notFound',
   element: <Index/>,
   errorElement: <NotFoundPage/>
   },{
-  path:'/shopping-list-web-app/about',
+  path:'/about',
   element: <About/>,
   },{
-  path:'/shopping-list-web-app/login',
+  path:'/login',
   element: <LoginPage/>,
   },{
-    path:'/shopping-list-web-app/register',
-    element: <RegisterPage/>,
-    },{
-  path:'/shopping-list-web-app/lists',
+  path:'/register',
+  element: <RegisterPage/>,
+  },{
+  path:'/lists',
   element: <NotFoundPage/>,
   },{
-  path:'/shopping-list-web-app/recipes/',
+  path:'/recipes/',
   element: <Recipes/>,
   },{
-    path: '/shopping-list-web-app/recipes/:recipeId',
+    path: '/recipes/:recipeId',
     element: <Recipe/>,
   }]) 
 

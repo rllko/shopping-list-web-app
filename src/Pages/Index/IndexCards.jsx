@@ -11,21 +11,21 @@ function Cards(){
                         Organize your next shopping spree
                     </h2>
                     <div>
-                        <img src="./img/app-compras.svg" className="w-[45vw] md:w-[40vw] lg:w-[25vw] mx-auto xl:w-72" draggable="false" alt="" />
+                        <img src="/img/app-compras.svg" className="w-[45vw] md:w-[40vw] lg:w-[25vw] mx-auto xl:w-72" draggable="false" alt="" />
                     </div>
                 </div>
             </section>
 
             <section className="flex flex-col md:flex-row h-full items-center lg:gap-12 xl:w-[45%] xl:mx-auto xl:gap-2 justify-center md:mt-0">
                     <div className="">
-                        <img src="./img/lista-mulher.svg" draggable="false" className="w-[40vw] md:w-[45vw] lg:w-[30vw] xl:w-[40vw] mx-auto 2xl:w-[40vw] md:pr-6 scale-x-[-1]" 
+                        <img src="/img/lista-mulher.svg" draggable="false" className="w-[40vw] md:w-[45vw] lg:w-[30vw] xl:w-[40vw] mx-auto 2xl:w-[40vw] md:pr-6 scale-x-[-1]" 
                         alt="lista-mulher.svg" />
                     </div>
                     <div className="flex md:w-[85%] items-center lg:items-start lg:w-[50%] xl:w-full flex-col gap-2 lg:gap-4 ">
                         <p className="text-zinc-600 text-center lg:text-left  w-[80%] lg:text-2xl md:text-2xl/8 xl:text-2xl md:w-[80%] mx-auto lg:mx-0 lg:w-[80%] xl:w-full 2xl:w-[80%] mb-4 2xl:text-3xl md:pt-4">
                             Create a digital list to organize your shopping and save time and paper.
                         </p>
-                        <Link to={'/shopping-list-web-app/register'} className= 
+                        <Link to={'/register'} className= 
                         "text-base w-fit md:text-left text-center hover:text-black xl:mr-auto p-2 md:text-xl 2xl:text-xl lg:text-xl lg:p-3 xl:text-base mb-2 bg-transparent lg:block \
                         px-5 rounded-lg border-2  align-text-top border-black \
                         hover:bg-gradient-to-tr cursor-pointer text-black hover:from-orange-100 \

@@ -69,14 +69,14 @@ export default function RegisterForm({formik}) {
             {errors.termsOfService && <span className="text-red-700 text-[0.75rem] text-left mt-[0.25rem]"> {errors.termsOfService} </span>}
 
             <div className=" md:justify-normal md:flex justify-between items-center mt-2">
-            <Link draggable="false" to={"/shopping-list-web-app/login"} className="text-black hidden lg:!block hover:text-black">Already have an account?</Link>
+            <Link draggable="false" to={"/login"} className="text-black hidden lg:!block hover:text-black">Already have an account?</Link>
                 <button type="submit" disabled={isSubmitting} className={`bg-black ${isSubmitting? 'opacity-75' : ''} cursor-pointer w-full lg:w-1/3 md:ml-auto text-white font-bold`}>
                     Register
                 </button>
             </div>
             
             <div className="flex justify-end items-center">
-                <Link draggable="false" to={"/shopping-list-web-app/login"} className="text-black lg:hidden hover:text-black">Already have an account? Login in</Link>
+                <Link draggable="false" to={"/login"} className="text-black lg:hidden hover:text-black">Already have an account? Login in</Link>
             </div>
         </form>)
 

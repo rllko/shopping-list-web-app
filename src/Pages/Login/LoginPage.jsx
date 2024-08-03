@@ -49,7 +49,7 @@ export default function LoginPage() {
                 lg:w-[90%]  lg:-right-[45%]  lg:top-[5vh] 
                 xl:w-[55%]  xl:-right-[10%]  xl:top-[10vh] 
                 2xl:w-[40%] 2xl:right-0      2xl:top-0"
-                src="/shopping-list-web-app/img/Inicial.svg" draggable="false"  alt="inicial.svg" />
+                src="/img/Inicial.svg" draggable="false"  alt="inicial.svg" />
             </div>
         </section>
         <Footer/>
